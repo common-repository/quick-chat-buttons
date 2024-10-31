@@ -1,0 +1,332 @@
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6u8w4BMUTPHh30AXC-v.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh7USSwiPHA.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwiPHA.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh50XSwiPHA.ttf) format('truetype');
+}
+body,
+body *,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    background: #ffffff;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: 'Lato', sans-serif;
+    color: #3c5668;
+}
+#wpcontent {
+     padding-left: 0;
+}
+a {
+    text-decoration: none;
+}
+.price-top-section {
+    padding: 30px 0 0;
+    text-align: center;
+    background: #efefef;
+    overflow: hidden;
+}
+.plan-switcher {
+    display: flex;
+    max-width: 640px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.plan-switch {
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.plan-switch + .plan-switch {
+    margin-left: 1px;
+}
+.plan-switch.active, .plan-switch:hover {
+    background-color: #ffffff;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.plan-switch.active {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.plan-switch .plan-title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+.plan-switch .plan-sub-title {
+    font-size: 14px;
+    line-height: 20px;
+}
+.plan-switch.active .plan-title, .plan-switch.active .plan-sub-title {
+    color: #512DA8;
+}
+.pricing-table {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    border-radius: 10px;
+}
+.pricing-row {
+    display: flex;
+    border-bottom: solid 1px #efefef;
+}
+.price-middle-section {
+    padding: 25px 0;
+    width: 1024px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+.pricing-row .pricing-col {
+    flex: 1;
+    text-align: center;
+    padding: 10px 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.pricing-row .pricing-col.col-1 {
+    flex: 0 0 360px;
+    text-align: left;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.pricing-row .pricing-col + .pricing-col {
+    border-left: solid 1px #efefef;
+}
+.col-yes {
+    color: #15C15D;
+}
+.col-no {
+    color: #FF4238;
+}
+
+.kl-price-tooltip {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 18px;
+    margin: 0 0 0 4px;
+}
+.kl-price-tooltip .kl-price-text {
+    position: absolute;
+    bottom: 100%;
+    display: inline-block;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    right: 5px;
+    transform: translate(0, -30px);
+    width: calc(100% - 20px);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.05s linear;
+    z-index: 111;
+}
+.kl-price-tooltip .kl-price-text:after {
+    content: '';
+    position: absolute;
+    left: auto;
+    right: 13px;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #ffffff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: 100%;
+    z-index: 1;
+}
+.kl-price-tooltip .kl-price-text a {
+    color: #512DA8;
+    display: inline-block;
+}
+.kl-price-tooltip .tooltip-icon {
+    display: inline-block;
+}
+.kl-price-tooltip .tooltip-icon svg {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+.kl-price-tooltip:hover .kl-price-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 5px);
+}
+
+.plan-name {
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: bold;
+    padding: 0 0 15px 0;
+}
+.plan-price {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    padding: 0 0 5px 0;
+}
+.plan-price span {
+    font-weight: normal;
+    font-size: 14px;
+}
+.plan-update {
+    font-weight: bold;
+}
+.plan-feature span {
+    display: inline-block;
+    font-size: 14px;
+    background: #efefef;
+    padding: 4px 12px;
+    margin: 6px 0 15px;
+    border-radius: 25px;
+}
+.plan-button a {
+    background-color: #ffffff;
+    display: inline-block;
+    border: solid 1px #512DA8;
+    color: #512DA8;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 25px;
+}
+.plan-button a:hover {
+    background-color: #512DA8;
+    color: #ffffff;
+}
+
+
+.pricing-table.yearly-plan .yearly-note, .pricing-table.lifetime-plan .lifetime-note {
+    display: block;
+}
+.pricing-table.yearly-plan .lifetime-note, .pricing-table.lifetime-plan .yearly-note {
+    display: none;
+}
+.col-yes svg path {
+    stroke: #15C15D;
+}
+.mobile-view-table {
+    display: none;
+}
+.desktop-view-table {
+    display: block;
+}
+.plan-page-title {
+    padding: 10px 0 35px;
+    font-size: 24px;
+}
+
+
+/* Pricing table mobile view */
+.mobile-view-table .pricing-tables.yearly-plan .yearly-note, .mobile-view-table .pricing-tables.lifetime-plan .lifetime-note {
+    display: block;
+}
+.mobile-view-table .pricing-tables.yearly-plan .lifetime-note, .mobile-view-table .pricing-tables.lifetime-plan .yearly-note {
+    display: none;
+}
+.mobile-view-table .pricing-tables {
+    display: flex;
+}
+.mobile-view-table .pricing-tables .price-table {
+    flex: 1;
+    border: solid 1px #efefef;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+.mobile-view-table .plan-head {
+    border-bottom: solid 1px #efefef;
+    padding: 20px 15px;
+    text-align: center;
+}
+.mobile-view-table .pricing-col {
+    text-align: left;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.mobile-view-table .pricing-col:not(:last-child) {
+    border-bottom: solid 1px #efefef;
+}
+.mobile-view-table .pricing-tables .price-table:first-child {
+    margin-left: 20px;
+}
+
+
+@media only screen and (max-width: 960px){
+    .desktop-view-table {
+        display: none;
+    }
+    .mobile-view-table {
+        display: block;
+    }
+}
+@media only screen and (min-width: 641px) and (max-width: 800px) {
+    .mobile-view-table .tooltip-icon {
+        display: none;
+    }
+    .mobile-view-table .pricing-col:hover .kl-price-text {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 5px);
+    }
+    .mobile-view-table .kl-price-tooltip .kl-price-text:after {
+        right: 50%;
+    }
+    .mobile-view-table .kl-price-tooltip {
+        width: 0;
+        height: 0;
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .mobile-view-table .pricing-tables {
+        display: block;
+    }
+}
+@media only screen and (max-width: 540px) {
+    .plan-sub-title {
+        display: none;
+    }
+}

@@ -1,0 +1,389 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.qcb-content * {
+    box-sizing: border-box;
+}
+
+.qcb-content svg {
+    fill: #ffffff;
+}
+.qcb-main-button .chat-button {
+    margin: 0;
+}
+.qcb-content {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+}
+.qcb-content .chat-btn {
+    width: 64px;
+    height: 64px;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+.qcb-content .channel-btn {
+    display: block;
+    width: 54px;
+    height: 54px;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px;
+    margin: 0 auto;
+}
+.qcb-content .channel-btn:focus, .qcb-content .channel-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px;
+}
+.qcb-content .channel-btn svg {
+    width: 100%;
+    height: 100%;
+}
+.channel-tooltip {
+    position: relative;
+}
+.channel-tooltip:before {
+    content: attr(data-title);
+    position: absolute;
+    background: #fff;
+    line-height: 20px;
+    font-size: 14px;
+    white-space: pre-wrap;
+    width: max-content;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    bottom: 100%;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 25px;
+    font-weight: 400;
+    opacity: 0;
+    transition: all 0.3s linear;
+    pointer-events: none;
+}
+
+.channel-tooltip:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    clear: both;
+    transform: translate(-5px, -20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s linear;
+}
+.channel-tooltip:hover:before {
+    opacity: 1;
+    transform: translate(-50%, -10px);
+}
+.channel-tooltip:hover:after {
+    opacity: 1;
+    transform: translate(-5px, -5px);
+}
+
+.qcb-content .qcb-main-button .channel-btn {
+    position: relative;
+}
+.kl-main-icon, .kl-close-icon {
+    display: block;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: all 0.3s ease-in-out;
+}
+.qcb-buttons .chat-btn {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    margin: 0 auto;
+    transform-origin: center;
+}
+.qcb-content:not(.has-single-button) .qcb-main-button .channel-btn {
+    transition: all 0.3s ease-in-out;
+}
+.qcb-content .qcb-buttons .chat-btn {
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: scale(0) translate(0, 0);
+    transform-origin: center;
+    transition: all 0.3s ease-in-out;
+}
+.qcb-content.show-icons .qcb-buttons .chat-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+.qcb-content .qcb-main-button .kl-main-icon {
+    opacity: 1;
+    transform: translate(0, -50%) rotate(0deg);
+}
+.qcb-content .qcb-main-button .kl-close-icon {
+    opacity: 0;
+    transform: translate(0, -50%) rotate(-360deg);
+}
+.qcb-content.show-icons .qcb-main-button .kl-main-icon {
+    opacity: 0;
+    transform: translate(0, -50%) rotate(360deg);
+}
+.qcb-content.show-icons .qcb-main-button .kl-close-icon {
+    opacity: 1;
+    transform: translate(0, -50%)rotate(0deg);
+}
+.kl-button-text {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translate(-10px, -50%);
+    background: #fff;
+    padding: 6px 15px;
+    border-radius: 8px;
+    overflow: visible;
+    white-space: pre-wrap;
+    width: max-content;
+    text-align: center;
+    min-width: 1px;
+    max-width: 320px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    color: #333;
+    pointer-events: none;
+}
+.kl-button-text:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 4px 8px 4px;
+    border-color: transparent transparent #ffffff transparent;
+    transform: rotate(90deg) translate(-50%, -7px);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+.qcb-content.show-icons .qcb-main-button .chat-btn {
+    padding: 10px;
+}
+.qcb-content .qcb-buttons {
+    transform: translate(0, 5px);
+}
+.kl-tooltip .kl-button-text {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-30px, -50%);
+    pointer-events: none;
+    transition: all 0.1s ease-in-out;
+}
+.kl-tooltip:hover .kl-button-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-10px, -50%);
+    pointer-events: none;
+}
+.qcb-content.show-icons .qcb-main-button .kl-button-text {
+    display: none;
+}
+.kl-pos-right.kl-tooltip .kl-button-text {
+    right: auto;
+    transform: translate(30px, -50%);
+    left: 100%;
+}
+.kl-pos-right.kl-tooltip:hover .kl-button-text {
+    transform: translate(10px, -50%);
+}
+.kl-tooltip.kl-pos-right .kl-button-text:after {
+    border-width: 8px 4px 0px 4px;
+    border-color: #ffffff transparent transparent transparent;
+    left: 0;
+    transform: rotate(90deg) translate(-50%, 7px);
+}
+.qcb-content.qcb-left {
+    left: 25px;
+    right: auto;
+}
+.kl-button-text.kl-pos-right:after {
+    border-width: 8px 4px 0px 4px;
+    border-color: #ffffff transparent transparent transparent;
+    left: 0;
+    transform: rotate(90deg) translate(-50%, 7px);
+}
+.kl-button-text.kl-pos-right {
+    right: auto;
+    transform: translate(10px, -50%);
+    left: 100%;
+}
+.kl-button-text.kl-pos-right:after {
+    border-width: 8px 4px 0px 4px;
+    border-color: #ffffff transparent transparent transparent;
+    left: 0;
+    transform: rotate(90deg) translate(-50%, 7px);
+}
+
+
+.kl-pending-message {
+    display: inline-grid;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    height: auto;
+    width: auto;
+    line-height: 1;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 3px;
+    font-size: 10px;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 11;
+    min-height: 16px;
+    min-width: 16px;
+    border: 2px solid #ffffff;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+}
+.qcb-content.show-icons .kl-pending-message {
+    display: none;
+}
+.kl-pos-top .kl-button-text {
+    bottom: 100%;
+    top: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.kl-pos-top.kl-tooltip:hover .kl-button-text {
+    transform: translate(-50%,-15px);
+}
+.kl-pos-top.kl-tooltip .kl-button-text {
+    transform: translate(-50%, -35px);
+    margin-left: 50%;
+}
+.kl-pos-top .kl-button-text:after {
+    top: 100%;
+    bottom: auto;
+    left: 50%;
+    border-width: 0 4px 8px 4px;
+    border-color: transparent transparent #ffffff transparent;
+    transform: rotate(180deg) translate(50%, 0);
+}
+.qcb-content.qcb-horizontal .qcb-buttons .chat-btn a {
+    position: relative;
+}
+.qcb-content.hide-close-button .qcb-buttons .chat-btn {
+    bottom: 10px;
+}
+.qcb-content .chat-btn .instagram-button {
+    background: #fed975;
+    background: -moz-linear-gradient(45deg, #fed975 0, #fa7e1e 26%, #d62977 50%, #962fbf 75%, #4f5ad5 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0, #fed975), color-stop(26%, #fa7e1e), color-stop(50%, #d62977), color-stop(75%, #962fbf), color-stop(100%, #4f5ad5));
+    background: -webkit-linear-gradient(45deg, #fed975 0, #fa7e1e 26%, #d62977 50%, #962fbf 75%, #4f5ad5 100%);
+    background: -o-linear-gradient(45deg, #fed975 0, #fa7e1e 26%, #d62977 50%, #962fbf 75%, #4f5ad5 100%);
+    background: -ms-linear-gradient(45deg, #fed975 0, #fa7e1e 26%, #d62977 50%, #962fbf 75%, #4f5ad5 100%);
+    background: linear-gradient(45deg, #fed975 0, #fa7e1e 26%, #d62977 50%, #962fbf 75%, #4f5ad5 100%)
+}
+.attention-gelatine {
+    animation: gelatine 0.5s infinite;
+}
+@keyframes gelatine {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05); }
+}
+
+.attention-spin {
+    animation: 3s infinite elastic-spin;
+}
+@keyframes elastic-spin {
+    0% {
+        transform: rotate(0)
+    }
+    100%, 25% {
+        transform: rotate(720deg)
+    }
+}
+
+.attention-pulse {
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+    from { transform: scale(0.8); }
+    to { transform: scale(1.2); }
+}
+
+.attention-flash {
+    animation: flash 500ms ease infinite alternate;
+}
+@keyframes flash {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.attention-bounce {
+    animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+.attention-swing {
+    transform-origin: top center;
+    animation: swing 2s ease infinite;
+}
+@keyframes swing {
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.attention-shake {
+    animation: shake 3s infinite;
+}
+@keyframes shake {
+    20%, 80% {transform: translateX(0);}
+    30%, 50% {transform: translateX(-10px);}
+    40%, 60% {transform: translateX(10px);}
+}
+
+.attention-shockwave {
+    animation: shockwave 3s infinite ease-in-out;
+}
+@keyframes shockwave {
+    30%, 50% { transform: rotate(-20deg) scale(1.2); }
+    40% { transform: rotate(20deg) scale(1.2); }
+    40%, 60% { transform: rotate(0deg) scale(1.2); }
+    20%, 80% { transform: scale(1); }
+}
+
+.qcb-content {
+    display: none;
+}
+.qcb-content.active {
+    display: block;
+}
+.qcb-content .chat-btn a {
+    outline: none;
+}

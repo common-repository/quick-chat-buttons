@@ -1,0 +1,452 @@
+.qcb-content svg, .qcb-content.has-single-button .qcb-main-button .chat-btn a svg {
+    fill: #ffffff;
+}
+.qcb-main-button .chat-button {
+    margin: 0;
+}
+.qcb-content {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    z-index: 9999;
+}
+.qcb-content .chat-btn {
+    width: 64px;
+    height: 64px;
+    padding: 5px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.qcb-content .channel-btn {
+    display: block;
+    width: 54px;
+    height: 54px;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px;
+    margin: 0 auto;
+}
+.qcb-content .channel-btn:focus, .qcb-content .channel-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px;
+}
+.qcb-content .channel-btn svg {
+    width: 100%;
+    height: 100%;
+}
+.qcb-content .qcb-main-button .channel-btn {
+    position: relative;
+}
+.kl-main-icon, .kl-close-icon {
+    display: block;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: all 0.3s ease-in-out;
+}
+.qcb-buttons .chat-btn {
+    opacity: 0;
+    pointer-events: none;
+    margin: 0 auto;
+    transform-origin: center;
+    transition: all 0.3s ease-in-out;
+}
+.qcb-content:not(.has-single-button) .qcb-main-button .channel-btn {
+    transition: all 0.3s ease-in-out;
+}
+.qcb-content .qcb-buttons .chat-btn {
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: scale(0) translate(0, 0);
+    transform-origin: center;
+    transition: all 0.3s ease-in-out;
+}
+.qcb-content.show-icons .qcb-buttons .chat-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+.qcb-content .qcb-main-button .kl-main-icon {
+    opacity: 1;
+    transform: translate(0, -50%) rotate(0deg);
+}
+.qcb-content .qcb-main-button .kl-close-icon {
+    opacity: 0;
+    transform: translate(0, -50%) rotate(-360deg);
+}
+.qcb-content.show-icons .qcb-main-button .kl-main-icon {
+    opacity: 0;
+    transform: translate(0, -50%) rotate(360deg);
+}
+.qcb-content.show-icons .qcb-main-button .kl-close-icon {
+    opacity: 1;
+    transform: translate(0, -50%)rotate(0deg);
+}
+.kl-button-text {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translate(-10px, -50%);
+    background: #fff;
+    padding: 6px 15px;
+    border-radius: 8px;
+    overflow: visible;
+    white-space: pre-wrap;
+    width: max-content;
+    text-align: center;
+    min-width: 1px;
+    max-width: 320px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    color: #333;
+    pointer-events: none;
+}
+.kl-button-text:after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 4px 8px 4px;
+    border-color: transparent transparent #ffffff transparent;
+    transform: rotate(90deg) translate(-50%, -7px);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+.qcb-content.show-icons .qcb-main-button .chat-btn {
+    padding: 10px;
+}
+.qcb-content .qcb-buttons {
+    transform: translate(0, 5px);
+}
+.kl-tooltip .kl-button-text {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-30px, -50%);
+    pointer-events: none;
+    transition: all 0.1s ease-in-out;
+}
+.kl-tooltip:hover .kl-button-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-10px, -50%);
+    pointer-events: none;
+}
+.qcb-content.show-icons .qcb-main-button .kl-button-text {
+    display: none;
+}
+.kl-pos-right.kl-tooltip .kl-button-text {
+    right: auto;
+    transform: translate(30px, -50%);
+    left: 100%;
+}
+.kl-pos-right.kl-tooltip:hover .kl-button-text {
+    transform: translate(10px, -50%);
+}
+.kl-tooltip.kl-pos-right .kl-button-text:after {
+    border-width: 8px 4px 0px 4px;
+    border-color: #ffffff transparent transparent transparent;
+    left: 0;
+    transform: rotate(90deg) translate(-50%, 7px);
+}
+.qcb-content.qcb-left {
+    left: 5px;
+    right: auto;
+}
+.kl-button-text.kl-pos-right:after {
+    border-width: 8px 4px 0px 4px;
+    border-color: #ffffff transparent transparent transparent;
+    left: 0;
+    transform: rotate(90deg) translate(-50%, 7px);
+}
+.kl-button-text.kl-pos-right {
+    right: auto;
+    transform: translate(10px, -50%);
+    left: 100%;
+}
+.kl-button-text.kl-pos-right:after {
+    border-width: 8px 4px 0px 4px;
+    border-color: #ffffff transparent transparent transparent;
+    left: 0;
+    transform: rotate(90deg) translate(-50%, 7px);
+}
+.kl-pos-top .kl-button-text {
+    bottom: 100%;
+    top: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.kl-pos-top.kl-tooltip:hover .kl-button-text {
+    transform: translate(-50%,-15px);
+}
+.kl-pos-top.kl-tooltip .kl-button-text {
+    transform: translate(-50%, -35px);
+    margin-left: 50%;
+}
+.kl-pos-top .kl-button-text:after {
+    top: 100%;
+    bottom: auto;
+    left: 50%;
+    border-width: 0 4px 8px 4px;
+    border-color: transparent transparent #ffffff transparent;
+    transform: rotate(180deg) translate(50%, 0);
+}
+.qcb-content.qcb-horizontal .qcb-buttons .chat-btn a {
+    position: relative;
+}
+.kl-pending-message {
+    display: inline-grid;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    height: auto;
+    width: auto;
+    line-height: 1;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 2px;
+    font-size: 7px;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 11;
+    min-height: 16px;
+    min-width: 16px;
+    border: 2px solid #ffffff;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+}
+.qcb-content.show-icons .kl-pending-message {
+    display: none;
+}
+.qcb-content.hide-close-button.qcb-horizontal .qcb-buttons .chat-btn, .qcb-content.hide-close-button.qcb-vertical.qcb-right .qcb-buttons .chat-btn {
+    bottom: 10px;
+}
+.qcb-content.hide-close-button.qcb-vertical.qcb-left .qcb-buttons .chat-btn {
+    left: 5px;
+}
+.qcb-content .chat-btn a {
+    outline: none;
+}
+
+/*Attention Effect*/
+.attention-gelatine {
+    animation: gelatine 0.5s infinite;
+}
+@keyframes gelatine {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05); }
+}
+
+.attention-spin {
+    animation: 3s infinite elastic-spin;
+}
+@keyframes elastic-spin {
+    0% {
+        transform: rotate(0)
+    }
+    100%, 25% {
+        transform: rotate(720deg)
+    }
+}
+
+.attention-pulse {
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+    from { transform: scale(0.8); }
+    to { transform: scale(1.2); }
+}
+
+.attention-flash {
+    animation: flash 500ms ease infinite alternate;
+}
+@keyframes flash {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.attention-bounce {
+    animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+.attention-swing {
+    transform-origin: top center;
+    animation: swing 2s ease infinite;
+}
+@keyframes swing {
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.attention-shake {
+    animation: shake 3s infinite;
+}
+@keyframes shake {
+    20%, 80% {transform: translateX(0);}
+    30%, 50% {transform: translateX(-10px);}
+    40%, 60% {transform: translateX(10px);}
+}
+
+.attention-shockwave {
+    animation: shockwave 3s infinite ease-in-out;
+}
+@keyframes shockwave {
+    30%, 50% { transform: rotate(-20deg) scale(1.2); }
+    40% { transform: rotate(20deg) scale(1.2); }
+    40%, 60% { transform: rotate(0deg) scale(1.2); }
+    20%, 80% { transform: scale(1); }
+}
+
+
+/*preview.css*/
+[data-kla-tooltip] {
+    position: relative;
+    z-index: 1000
+}
+
+[data-kla-tooltip]:after, [data-kla-tooltip]:before {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: 50%;
+    bottom: calc(100% + 5px);
+    pointer-events: none;
+    transition: 0s;
+    /*will-change: transform;*/
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[data-kla-tooltip]:before {
+    content: attr(data-kla-tooltip);
+    padding: 4px 10px;
+    min-width: 50px;
+    max-width: 210px;
+    border-radius: 6px;
+    font-size: 14px;
+    width: auto;
+    background-color: #4e4e4e;
+    box-shadow: 0 0 24px rgba(0, 0, 0, .2);
+    color: #fff;
+    text-align: center;
+    transform: translate(-50%, -5px) scale(.5);
+    line-height: initial;
+    display: flex;
+    justify-content: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+.kla-inner-box [data-kla-tooltip]:before {
+    white-space: pre-wrap;
+    width: max-content
+}
+
+[data-kla-tooltip]:after {
+    content: '';
+    border-style: solid;
+    border-width: 7px 5px 0 5px;
+    border-color: #4e4e4e transparent transparent transparent;
+    transition-duration: 0s;
+    transform-origin: top;
+    transform: translateX(-50%) scaleY(0);
+    text-decoration: none
+}
+
+.active-tooltip[data-kla-tooltip]:after, .active-tooltip[data-kla-tooltip]:before, [data-kla-tooltip]:hover:after, [data-kla-tooltip]:hover:before {
+    visibility: visible;
+    opacity: 1
+}
+
+.active-tooltip[data-kla-tooltip]:before, [data-kla-tooltip]:hover:before {
+    transition-delay: 0s;
+    transform: translate(-50%, -6px) scale(1)
+}
+
+.active-tooltip[data-kla-tooltip]:after, [data-kla-tooltip]:hover:after {
+    transition-delay: 0s;
+    transition-duration: 0s;
+    transform: translateX(-50%) scaleY(1)
+}
+
+[data-kla-tooltip-location=left]:after, [data-kla-tooltip-location=left]:before {
+    left: auto;
+    right: calc(100% + 5px);
+    bottom: 50%
+}
+
+.preview-layout .button-list span:not(.has-image)[data-kla-tooltip-location=left]:after, .preview-layout .button-list span:not(.has-image)[data-kla-tooltip-location=left]:before, .preview-layout .main-button .single-btn span:not(.has-image)[data-kla-tooltip-location=left]:after, .preview-layout .main-button .single-btn span:not(.has-image)[data-kla-tooltip-location=left]:before {
+    right: calc(100% + 15px)
+}
+
+[data-kla-tooltip-location=left]:before {
+    transform: translate(-5px, 50%) scale(.5)
+}
+
+.active-tooltip[data-kla-tooltip-location=left]:before, [data-kla-tooltip-location=left]:hover:before {
+    transform: translate(-5px, 50%) scale(1)
+}
+
+[data-kla-tooltip-location=left]:after {
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent rgba(55, 64, 70, .9);
+    transform-origin: left;
+    transform: translateY(50%) scaleX(0)
+}
+
+.active-tooltip[data-kla-tooltip-location=left]:after, [data-kla-tooltip-location=left]:hover:after {
+    transform: translateY(50%) scaleX(1)
+}
+
+[data-kla-tooltip-location=right]:after, [data-kla-tooltip-location=right]:before {
+    left: calc(100% + 5px);
+    bottom: 50%
+}
+
+.preview-layout .button-list span:not(.has-image)[data-kla-tooltip-location=right]:after, .preview-layout .button-list span:not(.has-image)[data-kla-tooltip-location=right]:before, .preview-layout .main-button .single-btn span:not(.has-image)[data-kla-tooltip-location=right]:after, .preview-layout .main-button .single-btn span:not(.has-image)[data-kla-tooltip-location=right]:before {
+    left: calc(100% + 15px);
+    bottom: 50%
+}
+
+[data-kla-tooltip-location=right]:before {
+    transform: translate(5px, 50%) scale(.5)
+}
+
+.active-tooltip[data-kla-tooltip-location=right]:before, [data-kla-tooltip-location=right]:hover:before {
+    transform: translate(5px, 50%) scale(1)
+}
+
+[data-kla-tooltip-location=right]:after {
+    border-width: 5px 5px 5px 0;
+    border-color: transparent rgba(55, 64, 70, .9) transparent transparent;
+    transform-origin: right;
+    transform: translateY(50%) scaleX(0)
+}
+
+.active-tooltip[data-kla-tooltip-location=right]:after, [data-kla-tooltip-location=right]:hover:after {
+    transform: translateY(50%) scaleX(1)
+}

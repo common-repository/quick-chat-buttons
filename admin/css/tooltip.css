@@ -1,0 +1,131 @@
+[data-kla-tooltip] {
+    position: relative;
+    z-index: 1000
+}
+
+[data-kla-tooltip]:after, [data-kla-tooltip]:before {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: 50%;
+    bottom: calc(100% + 5px);
+    pointer-events: none;
+    transition: 0s;
+    /*will-change: transform;*/
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[data-kla-tooltip]:before {
+    content: attr(data-kla-tooltip);
+    padding: 4px 10px;
+    min-width: 50px;
+    max-width: 210px;
+    border-radius: 6px;
+    font-size: 14px;
+    width: auto;
+    background-color: #4e4e4e;
+    box-shadow: 0 0 24px rgba(0, 0, 0, .2);
+    color: #fff;
+    text-align: center;
+    transform: translate(-50%, -5px) scale(.5);
+    line-height: initial;
+    display: flex;
+    justify-content: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+.kla-inner-box [data-kla-tooltip]:before {
+    white-space: pre-wrap;
+    width: max-content
+}
+
+[data-kla-tooltip]:after {
+    content: '';
+    border-style: solid;
+    border-width: 7px 5px 0 5px;
+    border-color: #4e4e4e transparent transparent transparent;
+    transition-duration: 0s;
+    transform-origin: top;
+    transform: translateX(-50%) scaleY(0);
+    text-decoration: none
+}
+
+.active-tooltip[data-kla-tooltip]:after, .active-tooltip[data-kla-tooltip]:before, [data-kla-tooltip]:hover:after, [data-kla-tooltip]:hover:before {
+    visibility: visible;
+    opacity: 1
+}
+
+.active-tooltip[data-kla-tooltip]:before, [data-kla-tooltip]:hover:before {
+    transition-delay: 0s;
+    transform: translate(-50%, -6px) scale(1)
+}
+
+.active-tooltip[data-kla-tooltip]:after, [data-kla-tooltip]:hover:after {
+    transition-delay: 0s;
+    transition-duration: 0s;
+    transform: translateX(-50%) scaleY(1)
+}
+
+[data-kla-tooltip-location=left]:after, [data-kla-tooltip-location=left]:before {
+    left: auto;
+    right: calc(100% + 5px);
+    bottom: 50%
+}
+
+.preview-layout .button-list span:not(.has-image)[data-kla-tooltip-location=left]:after, .preview-layout .button-list span:not(.has-image)[data-kla-tooltip-location=left]:before, .preview-layout .main-button .single-btn span:not(.has-image)[data-kla-tooltip-location=left]:after, .preview-layout .main-button .single-btn span:not(.has-image)[data-kla-tooltip-location=left]:before {
+    right: calc(100% + 15px)
+}
+
+[data-kla-tooltip-location=left]:before {
+    transform: translate(-5px, 50%) scale(.5)
+}
+
+.active-tooltip[data-kla-tooltip-location=left]:before, [data-kla-tooltip-location=left]:hover:before {
+    transform: translate(-5px, 50%) scale(1)
+}
+
+[data-kla-tooltip-location=left]:after {
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent rgba(55, 64, 70, .9);
+    transform-origin: left;
+    transform: translateY(50%) scaleX(0)
+}
+
+.active-tooltip[data-kla-tooltip-location=left]:after, [data-kla-tooltip-location=left]:hover:after {
+    transform: translateY(50%) scaleX(1)
+}
+
+[data-kla-tooltip-location=right]:after, [data-kla-tooltip-location=right]:before {
+    left: calc(100% + 5px);
+    bottom: 50%
+}
+
+.preview-layout .button-list span:not(.has-image)[data-kla-tooltip-location=right]:after, .preview-layout .button-list span:not(.has-image)[data-kla-tooltip-location=right]:before, .preview-layout .main-button .single-btn span:not(.has-image)[data-kla-tooltip-location=right]:after, .preview-layout .main-button .single-btn span:not(.has-image)[data-kla-tooltip-location=right]:before {
+    left: calc(100% + 15px);
+    bottom: 50%
+}
+
+[data-kla-tooltip-location=right]:before {
+    transform: translate(5px, 50%) scale(.5)
+}
+
+.active-tooltip[data-kla-tooltip-location=right]:before, [data-kla-tooltip-location=right]:hover:before {
+    transform: translate(5px, 50%) scale(1)
+}
+
+[data-kla-tooltip-location=right]:after {
+    border-width: 5px 5px 5px 0;
+    border-color: transparent rgba(55, 64, 70, .9) transparent transparent;
+    transform-origin: right;
+    transform: translateY(50%) scaleX(0)
+}
+
+.active-tooltip[data-kla-tooltip-location=right]:after, [data-kla-tooltip-location=right]:hover:after {
+    transform: translateY(50%) scaleX(1)
+}
